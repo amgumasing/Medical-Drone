@@ -86,5 +86,4 @@ public class DroneService {
             droneRepository.save(drone);
         }
     }
-
 }
