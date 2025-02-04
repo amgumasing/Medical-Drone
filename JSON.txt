@@ -1,0 +1,126 @@
+{
+    "info": {
+        "name": "Drone API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Register Drone",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"serialNumber\": \"DRONE12345\",\n  \"model\": \"LIGHTWEIGHT\",\n  \"weightLimit\": 500,\n  \"batteryCapacity\": 100,\n  \"state\": \"IDLE\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/drones/register",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "drones",
+                        "register"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Load Drone",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"MedicationA\",\n  \"weight\": 200,\n  \"code\": \"MEDA123\",\n  \"image\": \"image_url\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/drones/{droneId}/load",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "drones",
+                        "123",
+                        "load"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Check Loaded Medications",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/drones/{droneId}/medications",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "drones",
+                        "123",
+                        "medications"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Check Drone Availability",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/drones/available",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "drones",
+                        "available"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Check Drone Battery",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/drones/{droneId}/battery",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "drones",
+                        "123",
+                        "battery"
+                    ]
+                }
+            }
+        }
+    ]
+}
